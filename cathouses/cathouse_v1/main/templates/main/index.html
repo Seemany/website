@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    {% if products %}
+        {% for el in products %}
+            <div class="alert alert-warning mt-2">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.opisanie }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>У нас нет продуктов</p>
+    {% endif %}
+{% endblock %}
